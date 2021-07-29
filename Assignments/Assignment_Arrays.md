@@ -1,6 +1,7 @@
-#1. Compose a program that creates a one-dimentional array a containing exactly 1000 integers, and then attempts to access a[1000]. What happens when yu run the program?  
+#1. Compose a program that creates a one-dimentional array a containing exactly 1000 integers, and then attempts to access a[1000]. What happens when yu run the program? 
+ 
 
-       d. indexing error
+       d.You get an indexing error
 
 
 
@@ -11,7 +12,7 @@ a = []
 for i in range (10):  
 	a[i] = i * i  
 
-    a is declared as an empty array Initially. And therefore, no elements are appended to the array. Therefore attempting to use its elements in an assignment statement will raise a run-time error.
+    a is declared as an empty array  therefore, no elements are appended to the array. Attempting to use its elements in an assignment statement will raise a run-time error.
 
 #3. What does the following code fragment write?  
 
@@ -24,7 +25,7 @@ for v in a:
    stdio.writeln(v)  
 
 
-          It didn't work on my side
+          NameError: name 'stdarray' is not defined
 
 
 #4. What is a[] after executing the following code fragment?
@@ -46,3 +47,18 @@ for i in range(2, n):
        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
 #Bonus: Compose a program that takes an integer command-line argument n and writes n poker hands (five cards each) from a shuffled deck, separated by blank lines.
+# Python program to shuffle a deck of card
+
+# importing modules
+import itertools, random
+
+# make a deck of cards
+deck = list(itertools.product(range(1,14),['Spade','Heart','Diamond','Club']))
+
+# shuffle the cards
+random.shuffle(deck)
+
+# draw five cards random cards
+print("You got:")
+for i in range(5):
+   print(deck[i][0], "of", deck[i][1])
